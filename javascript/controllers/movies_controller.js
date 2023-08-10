@@ -9,10 +9,9 @@ export default class extends Controller {
 
     getMovies(event) {
         event.preventDefault()
+        this.listTarget.innerHTML = ""
 
         const url = `https://www.omdbapi.com/?s=${this.inputTarget.value}&apikey=adf1f2d7`
-        
-        this.listTarget.innerHTML = ""
         fetch(url)
         .then(response => response.json())
         .then((data) => {
